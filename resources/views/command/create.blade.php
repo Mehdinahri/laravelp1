@@ -23,10 +23,10 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#">{{__('message.Home')}} <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="#">{{__('message.Link')}} </a>
                         </li>
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         <li class="nav-item">
@@ -37,27 +37,37 @@
                 </div>
             </nav>
             <div class="col-md-8 m-auto">
-                
+            <h2>
+                {{__('message.titre')}}
+            </h2>
             <form method="POST" action="{{route('commands.store')}}">
                 @csrf
                 {{-- <input name="_token" value="{{csrf_token()}}">--}}
-                    <div class="form-group">
-                        @if (Session::has('success'))
+                @if (Session::has('success'))
                             <div class="alert alert-success" role="alert">
                                 {{Session::get('success')}}
                             </div>
-                        @endif
-                        
-                      <label for="exampleInputEmail1">name</label>
-                      <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp">
-                      @error('name')
+                        @endif    
+                <div class="form-group">                        
+                      <label for="exampleInputEmail1">{{__('message.name_en')}}</label>
+                      <input type="text" class="form-control" name="name_en" id="name_en" aria-describedby="emailHelp">
+                      @error('name_en')
                         <div class="alert alert-danger" role="alert">
                             {{$message}}
                         </div>
                       @enderror
                     </div>
+                    <div class="form-group">                        
+                        <label for="exampleInputEmail1">{{__('message.name_ar')}}</label>
+                        <input type="text" class="form-control" name="name_ar" id="name_ar" aria-describedby="emailHelp">
+                        @error('name_ar')
+                          <div class="alert alert-danger" role="alert">
+                              {{$message}}
+                          </div>
+                        @enderror
+                      </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">price</label>
+                        <label for="exampleInputEmail1">{{__('message.price')}}</label>
                         <input type="text" class="form-control" name="price"  id="price" aria-describedby="emailHelp">
                         @error('price')
                         <div class="alert alert-danger" role="alert">
@@ -66,15 +76,24 @@
                       @enderror
                       </div>
                       <div class="form-group">
-                        <label for="exampleInputEmail1">details</label>
-                        <input type="text" class="form-control" name="details"  id="details" aria-describedby="emailHelp">
-                        @error('details')
+                        <label for="exampleInputEmail1">{{__('message.details_en')}}</label>
+                        <input type="text" class="form-control" name="details_en"  id="details_en" aria-describedby="emailHelp">
+                        @error('details_en')
                         <div class="alert alert-danger" role="alert">
                             {{$message}}
                         </div>
                       @enderror
                       </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">{{__('message.details_ar')}}</label>
+                        <input type="text" class="form-control" name="details_ar"  id="details_ar" aria-describedby="emailHelp">
+                        @error('details_ar')
+                        <div class="alert alert-danger" role="alert">
+                            {{$message}}
+                        </div>
+                      @enderror
+                      </div>
+                    <button type="submit" class="btn btn-primary">{{__('message.Submit')}}</button>
                   </form>
             </div>
         </div>

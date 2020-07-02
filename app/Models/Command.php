@@ -9,7 +9,7 @@ class Command extends Model
     protected $table='Commands';
 
     protected $fillable = [
-        'name','price','details','created_at','updated_at'
+        'name_ar','name_en','price','details_ar','details_en','created_at','updated_at'
     ];
 
     /**
@@ -21,5 +21,5 @@ class Command extends Model
         'created_at','updated_at'
     ];
 
-    public $timestamps = false;
+    public $timestamps = true;
 }

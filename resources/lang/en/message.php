@@ -16,6 +16,18 @@ return [
     "hello gus"=>'Salut tous',
     "welcom"=>'Bonjour',
     "command.name" =>'le Nom et Obligatoire !!!',
-    "command.pricereq" =>'le champs price est obligatoire !!!'
+    "command.pricereq" =>'le champs price est obligatoire !!!',
+    "titre" =>'Site Laravel Multimangue',
+    "Home" =>'Home',
+    "Link" =>'Link',
+    "price" =>'price',
+    "Submit" =>'Submit',
+    "details_ar" =>'details en arab',
+    "details_en" =>'details en english',
+    "name_ar" =>'name en arab',
+    "name_en" =>'name en english',
+
+
+    
 
 ];
