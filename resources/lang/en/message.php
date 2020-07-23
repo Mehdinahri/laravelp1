@@ -26,6 +26,12 @@ return [
     "details_en" =>'details en english',
     "name_ar" =>'name en arab',
     "name_en" =>'name en english',
+    "operation" =>'Operation',
+    "modifier" =>'modifier',
+    "image" =>'image',
+    "delete" =>'حذف',
+
+
 
 
     

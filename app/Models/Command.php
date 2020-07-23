@@ -9,7 +9,7 @@ class Command extends Model
     protected $table='Commands';
 
     protected $fillable = [
-        'name_ar','name_en','price','details_ar','details_en','created_at','updated_at'
+        'image','name_en','name_ar','price','details_ar','details_en','created_at','updated_at'
     ];
 
     /**

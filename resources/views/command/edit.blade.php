@@ -40,7 +40,7 @@
             <h2>
                 {{__('message.titre')}}
             </h2>
-            <form method="POST" action="{{route('commands.store')}}" enctype="multipart/form-data">
+            <form method="POST" action="{{route('commands.update',$cmd -> id)}}">
                 @csrf
                 {{-- <input name="_token" value="{{csrf_token()}}">--}}
                 @if (Session::has('success'))
@@ -48,18 +48,9 @@
                                 {{Session::get('success')}}
                             </div>
                         @endif    
-                        <div class="form-group">                        
-                            <label for="exampleInputEmail1">{{__('message.image')}}</label>
-                            <input type="file" class="form-control" name="image" id="image" aria-describedby="emailHelp">
-                            @error('image')
-                              <div class="alert alert-danger" role="alert">
-                                  {{$message}}
-                              </div>
-                            @enderror
-                          </div>
                 <div class="form-group">                        
                       <label for="exampleInputEmail1">{{__('message.name_en')}}</label>
-                      <input type="text" class="form-control" name="name_en" id="name_en" aria-describedby="emailHelp">
+                      <input type="text" class="form-control" name="name_en" value="{{$cmd->name_en}}" id="name_en" aria-describedby="emailHelp">
                       @error('name_en')
                         <div class="alert alert-danger" role="alert">
                             {{$message}}
@@ -68,7 +59,7 @@
                     </div>
                     <div class="form-group">                        
                         <label for="exampleInputEmail1">{{__('message.name_ar')}}</label>
-                        <input type="text" class="form-control" name="name_ar" id="name_ar" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" name="name_ar" id="name_ar" value="{{$cmd->name_ar}}" aria-describedby="emailHelp">
                         @error('name_ar')
                           <div class="alert alert-danger" role="alert">
                               {{$message}}
@@ -77,7 +68,7 @@
                       </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">{{__('message.price')}}</label>
-                        <input type="text" class="form-control" name="price"  id="price" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" name="price"  id="price" value="{{$cmd->price}}" aria-describedby="emailHelp">
                         @error('price')
                         <div class="alert alert-danger" role="alert">
                             {{$message}}
@@ -86,7 +77,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">{{__('message.details_en')}}</label>
-                        <input type="text" class="form-control" name="details_en"  id="details_en" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" name="details_en"  id="details_en" value="{{$cmd->details_en}}" aria-describedby="emailHelp">
                         @error('details_en')
                         <div class="alert alert-danger" role="alert">
                             {{$message}}
@@ -95,14 +86,14 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">{{__('message.details_ar')}}</label>
-                        <input type="text" class="form-control" name="details_ar"  id="details_ar" aria-describedby="emailHelp">
+                        <input type="text" class="form-control" name="details_ar"  id="details_ar" value="{{$cmd->details_ar}}" aria-describedby="emailHelp">
                         @error('details_ar')
                         <div class="alert alert-danger" role="alert">
                             {{$message}}
                         </div>
                       @enderror
                       </div>
-                    <button type="submit" class="btn btn-primary">{{__('message.Submit')}}</button>
+                    <button type="submit" class="btn btn-primary">{{__('message.modifier')}}</button>
                   </form>
             </div>
         </div>

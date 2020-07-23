@@ -27,5 +27,11 @@ return [
     "details_ar" =>'تفاصيل بالعربي',
     "details_en" =>'تفاصيل بالأجليزي',
     "Submit" =>'إضافة',
+    "operation" =>'عمليات',
+    "modifier" =>'تعديل',
+    "image" =>'صورة',
+    "delete" =>'حذف',
+
+
 
 ];

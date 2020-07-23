@@ -38,6 +38,16 @@
             </nav>
             <div class="col-md-8 m-auto">
                 <h2>All Commands</h2>
+                @if (Session::has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{Session::get('success')}}
+                </div>
+            @endif   
+            @if (Session::has('error'))
+            <div class="alert alert-danger" role="alert">
+                {{Session::get('error')}}
+            </div>
+        @endif   
             <table class="table mt-4">
                 <thead>
                     <tr>
@@ -45,6 +55,7 @@
                         <th>{{__('message.name_'.LaravelLocalization::getCurrentLocale())}}</th>
                         <th>{{__('message.price')}}</th>
                         <th>{{__('message.details_'.LaravelLocalization::getCurrentLocale())}}</th>
+                        <th>{{__('message.operation')}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,6 +65,14 @@
                                 <td>{{$cmd -> name}}</td>
                                 <td>{{$cmd -> price}}</td>
                                 <td>{{$cmd -> details}}</td>
+                                <td>
+                                    <a class="btn btn-primary" href="{{url('/commands/edit/'.$cmd -> id)}}" role="button">
+                                        {{__('message.modifier')}}
+                                    </a>
+                                    <a class="btn btn-danger" href="{{route('command.delete',$cmd -> id)}}" role="button">
+                                        {{__('message.delete')}}
+                                    </a>
+                                </td>
                             </tr>
                     @endforeach
                 </tbody>

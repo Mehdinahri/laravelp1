@@ -55,6 +55,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'commands' => [
+            'driver' => 'local',
+            'root' => base_path('app/public/images/command'),
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
